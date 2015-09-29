@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var unirest = require('unirest');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -57,5 +58,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(3000, function(err){
+  if (err) throw err;
+  console.log("Rolando ready for browsing on port 3000...");
+});
 
 module.exports = app;
